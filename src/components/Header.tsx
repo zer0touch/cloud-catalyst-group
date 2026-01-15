@@ -17,11 +17,14 @@ const Header = () => {
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <a href="/" className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center">
-              <span className="font-display font-bold text-primary-foreground text-xl">N</span>
+          <a href="/" className="flex items-center gap-2">
+            <div className="flex items-center">
+              <span className="font-display font-bold text-xl text-foreground">Zer</span>
+              <div className="w-7 h-7 rounded-full border-2 border-primary flex items-center justify-center mx-0.5">
+                <span className="font-display font-bold text-primary text-sm">0</span>
+              </div>
+              <span className="font-display font-bold text-xl text-foreground">touch</span>
             </div>
-            <span className="font-display font-bold text-xl text-foreground">NexaTech</span>
           </a>
 
           {/* Desktop Navigation */}
