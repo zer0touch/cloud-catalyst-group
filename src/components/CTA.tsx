@@ -31,8 +31,8 @@ const CTA = () => {
 
           {/* Contact Info */}
           <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-6 text-muted-foreground">
-            <a href="mailto:hello@nexatech.com" className="hover:text-primary transition-colors">
-              hello@nexatech.com
+            <a href="mailto:hello@zer0touch.com" className="hover:text-primary transition-colors">
+              hello@zer0touch.com
             </a>
             <span className="hidden sm:block">•</span>
             <a href="tel:+18005551234" className="hover:text-primary transition-colors">
