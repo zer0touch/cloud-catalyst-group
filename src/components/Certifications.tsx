@@ -1,39 +1,46 @@
+import awsLogo from "@/assets/logos/aws.svg";
+import azureLogo from "@/assets/logos/azure.svg";
+import gcpLogo from "@/assets/logos/gcp.svg";
+import kubernetesLogo from "@/assets/logos/kubernetes.svg";
+import terraformLogo from "@/assets/logos/terraform.svg";
+import isoLogo from "@/assets/logos/iso.svg";
+
 const certifications = [
   {
     name: "AWS",
     fullName: "Amazon Web Services",
     level: "Advanced Partner",
-    color: "from-[#FF9900] to-[#FF6600]",
+    logo: awsLogo,
   },
   {
     name: "Azure",
     fullName: "Microsoft Azure",
     level: "Gold Partner",
-    color: "from-[#0078D4] to-[#00BCF2]",
+    logo: azureLogo,
   },
   {
     name: "GCP",
     fullName: "Google Cloud",
     level: "Premier Partner",
-    color: "from-[#4285F4] to-[#34A853]",
+    logo: gcpLogo,
   },
   {
     name: "K8s",
     fullName: "Kubernetes",
     level: "Certified Provider",
-    color: "from-[#326CE5] to-[#54A3FF]",
+    logo: kubernetesLogo,
   },
   {
     name: "TF",
     fullName: "Terraform",
     level: "Certified Partner",
-    color: "from-[#7B42BC] to-[#9D5CD9]",
+    logo: terraformLogo,
   },
   {
     name: "ISO",
     fullName: "ISO 27001",
     level: "Certified",
-    color: "from-[#1A73E8] to-[#4285F4]",
+    logo: isoLogo,
   },
 ];
 
@@ -59,9 +66,13 @@ const Certifications = () => {
               key={index}
               className="group relative p-6 rounded-2xl bg-card border border-border hover:border-primary/50 transition-all duration-300 text-center"
             >
-              {/* Badge Icon */}
-              <div className={`w-16 h-16 mx-auto mb-4 rounded-xl bg-gradient-to-br ${cert.color} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                <span className="font-display font-bold text-lg text-white">{cert.name}</span>
+              {/* Logo */}
+              <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <img 
+                  src={cert.logo} 
+                  alt={`${cert.fullName} logo`}
+                  className="max-w-full max-h-full object-contain"
+                />
               </div>
 
               {/* Name */}
