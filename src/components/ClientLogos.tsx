@@ -1,14 +1,15 @@
+import rackspaceLogo from "@/assets/logos/rackspace.svg";
+import hsbcLogo from "@/assets/logos/hsbc.svg";
+import lloydsLogo from "@/assets/logos/lloyds.svg";
+import nyseLogo from "@/assets/logos/nyse.svg";
+import aimiaLogo from "@/assets/logos/aimia.svg";
+
 const clients = [
-  { name: "Microsoft", initial: "M" },
-  { name: "IBM", initial: "IBM" },
-  { name: "Oracle", initial: "O" },
-  { name: "SAP", initial: "SAP" },
-  { name: "Cisco", initial: "C" },
-  { name: "Dell", initial: "D" },
-  { name: "VMware", initial: "V" },
-  { name: "Salesforce", initial: "SF" },
-  { name: "Adobe", initial: "A" },
-  { name: "Splunk", initial: "S" },
+  { name: "Rackspace", logo: rackspaceLogo },
+  { name: "HSBC", logo: hsbcLogo },
+  { name: "Lloyds Bank", logo: lloydsLogo },
+  { name: "New York Stock Exchange", logo: nyseLogo },
+  { name: "Aimia", logo: aimiaLogo },
 ];
 
 const ClientLogos = () => {
@@ -32,15 +33,17 @@ const ClientLogos = () => {
           {/* Scrolling Container */}
           <div className="flex overflow-hidden">
             <div className="flex animate-slide-left">
-              {[...clients, ...clients].map((client, index) => (
+              {[...clients, ...clients, ...clients].map((client, index) => (
                 <div
                   key={index}
                   className="flex-shrink-0 mx-8 group"
                 >
-                  <div className="w-32 h-20 rounded-xl glass flex items-center justify-center transition-all duration-300 group-hover:border-primary/50 group-hover:shadow-glow">
-                    <span className="font-display font-bold text-xl text-muted-foreground group-hover:text-foreground transition-colors">
-                      {client.initial}
-                    </span>
+                  <div className="w-40 h-24 rounded-xl glass flex items-center justify-center p-4 transition-all duration-300 group-hover:border-primary/50 group-hover:shadow-glow">
+                    <img 
+                      src={client.logo} 
+                      alt={`${client.name} logo`}
+                      className="max-w-full max-h-full object-contain filter brightness-0 invert opacity-70 group-hover:opacity-100 transition-opacity"
+                    />
                   </div>
                 </div>
               ))}
