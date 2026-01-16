@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import VideoModal from "./VideoModal";
 
 const CTA = () => {
   return (
@@ -27,11 +28,7 @@ const CTA = () => {
                 <ArrowRight className="ml-2" size={20} />
               </Link>
             </Button>
-            <Button variant="heroOutline" size="xl" asChild>
-              <a href="/videos/Zer0touch_Company_Overview.mp4" target="_blank" rel="noopener noreferrer">
-                Watch Capabilities Deck
-              </a>
-            </Button>
+            <VideoModal />
           </div>
 
           {/* Contact Info */}
