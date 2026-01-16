@@ -1,3 +1,6 @@
+import linkedinLogo from "@/assets/logos/linkedin.svg";
+import githubLogo from "@/assets/logos/github.svg";
+
 const Footer = () => {
   const links = {
     services: [
@@ -7,18 +10,20 @@ const Footer = () => {
       { name: "Digital Transformation", href: "#services" },
     ],
     company: [
-      { name: "About Us", href: "#about" },
-      { name: "Case Studies", href: "#" },
-      { name: "Careers", href: "#" },
-      { name: "Contact", href: "#" },
+      { name: "About Us", href: "/about" },
+      { name: "Careers", href: "/careers" },
+      { name: "Contact", href: "/contact" },
     ],
     resources: [
-      { name: "Blog", href: "#" },
-      { name: "Whitepapers", href: "#" },
-      { name: "Documentation", href: "#" },
-      { name: "Support", href: "#" },
+      { name: "Blog", href: "/blog" },
+      { name: "Support", href: "/support" },
     ],
   };
+
+  const socialLinks = [
+    { name: "LinkedIn", href: "https://www.linkedin.com/company/zer0touch", logo: linkedinLogo },
+    { name: "GitHub", href: "https://github.com/zer0touch", logo: githubLogo },
+  ];
 
   return (
     <footer className="bg-card border-t border-border">
@@ -39,13 +44,15 @@ const Footer = () => {
               Empowering enterprises with cutting-edge cloud, security, and AI solutions since 2015.
             </p>
             <div className="flex gap-4">
-              {["LinkedIn", "Twitter", "GitHub"].map((social) => (
+              {socialLinks.map((social) => (
                 <a
-                  key={social}
-                  href="#"
-                  className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-secondary/80 transition-colors"
+                  key={social.name}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center hover:bg-secondary/80 transition-colors"
                 >
-                  <span className="text-xs font-medium">{social[0]}</span>
+                  <img src={social.logo} alt={social.name} className="w-5 h-5" />
                 </a>
               ))}
             </div>

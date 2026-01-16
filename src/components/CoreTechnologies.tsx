@@ -16,6 +16,15 @@ import qdrantLogo from "@/assets/logos/qdrant.svg";
 import geminiLogo from "@/assets/logos/gemini.svg";
 import claudeLogo from "@/assets/logos/claude.svg";
 import openaiLogo from "@/assets/logos/openai.svg";
+import kafkaLogo from "@/assets/logos/kafka.svg";
+import bigqueryLogo from "@/assets/logos/bigquery.svg";
+import skaffoldLogo from "@/assets/logos/skaffold.svg";
+import n8nLogo from "@/assets/logos/n8n.svg";
+import langchainLogo from "@/assets/logos/langchain.svg";
+import elasticsearchLogo from "@/assets/logos/elasticsearch.svg";
+import linuxLogo from "@/assets/logos/linux.svg";
+import windowsLogo from "@/assets/logos/windows.svg";
+import openstackLogo from "@/assets/logos/openstack.svg";
 
 const technologies = [
   {
@@ -49,6 +58,26 @@ const technologies = [
     logo: postgresqlLogo,
   },
   {
+    name: "Redis",
+    category: "Databases",
+    logo: redisLogo,
+  },
+  {
+    name: "Elasticsearch",
+    category: "Databases",
+    logo: elasticsearchLogo,
+  },
+  {
+    name: "Kafka",
+    category: "Streaming",
+    logo: kafkaLogo,
+  },
+  {
+    name: "BigQuery",
+    category: "Analytics",
+    logo: bigqueryLogo,
+  },
+  {
     name: "OpenTelemetry",
     category: "Observability",
     logo: opentelemetryLogo,
@@ -69,19 +98,24 @@ const technologies = [
     logo: jenkinsLogo,
   },
   {
-    name: "Ansible",
-    category: "Automation",
-    logo: ansibleLogo,
-  },
-  {
     name: "GitLab",
     category: "CI/CD",
     logo: gitlabLogo,
   },
   {
-    name: "Redis",
-    category: "Databases",
-    logo: redisLogo,
+    name: "Skaffold",
+    category: "CI/CD",
+    logo: skaffoldLogo,
+  },
+  {
+    name: "Ansible",
+    category: "Automation",
+    logo: ansibleLogo,
+  },
+  {
+    name: "n8n",
+    category: "Automation",
+    logo: n8nLogo,
   },
   {
     name: "Pinecone",
@@ -107,6 +141,26 @@ const technologies = [
     name: "OpenAI",
     category: "AI/ML",
     logo: openaiLogo,
+  },
+  {
+    name: "LangChain",
+    category: "AI/ML",
+    logo: langchainLogo,
+  },
+  {
+    name: "Linux",
+    category: "OS",
+    logo: linuxLogo,
+  },
+  {
+    name: "Windows",
+    category: "OS",
+    logo: windowsLogo,
+  },
+  {
+    name: "OpenStack",
+    category: "Cloud",
+    logo: openstackLogo,
   },
 ];
 
