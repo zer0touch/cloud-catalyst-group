@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const CTA = () => {
   return (
@@ -20,9 +21,11 @@ const CTA = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button variant="hero" size="xl">
-              Book Free Strategy Call
-              <ArrowRight className="ml-2" size={20} />
+            <Button variant="hero" size="xl" asChild>
+              <Link to="/contact">
+                Book Free Strategy Call
+                <ArrowRight className="ml-2" size={20} />
+              </Link>
             </Button>
             <Button variant="heroOutline" size="xl">
               Download Capabilities Deck
