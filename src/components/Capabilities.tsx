@@ -5,7 +5,7 @@ import kubernetesLogo from "@/assets/logos/kubernetes.svg";
 import terraformLogo from "@/assets/logos/terraform.svg";
 import isoLogo from "@/assets/logos/iso.svg";
 
-const certifications = [
+const capabilities = [
   {
     name: "AWS",
     fullName: "Amazon Web Services",
@@ -44,13 +44,13 @@ const certifications = [
   },
 ];
 
-const Certifications = () => {
+const Capabilities = () => {
   return (
-    <section id="certifications" className="py-24 sm:py-32 bg-background relative">
+    <section id="capabilities" className="py-24 sm:py-32 bg-background relative">
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <span className="text-primary font-medium text-sm tracking-wider uppercase mb-4 block">Certifications</span>
+          <span className="text-primary font-medium text-sm tracking-wider uppercase mb-4 block">Capabilities</span>
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
             Industry-Leading Credentials
           </h2>
@@ -59,9 +59,9 @@ const Certifications = () => {
           </p>
         </div>
 
-        {/* Certifications Grid */}
+        {/* Capabilities Grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 max-w-6xl mx-auto">
-          {certifications.map((cert, index) => (
+          {capabilities.map((cert, index) => (
             <div
               key={index}
               className="group relative p-6 rounded-2xl bg-card border border-border hover:border-primary/50 transition-all duration-300 text-center"
@@ -106,4 +106,4 @@ const Certifications = () => {
   );
 };
 
-export default Certifications;
+export default Capabilities;
