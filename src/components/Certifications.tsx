@@ -9,25 +9,25 @@ const certifications = [
   {
     name: "AWS",
     fullName: "Amazon Web Services",
-    level: "Advanced Partner",
+    level: "Cloud Migrations and Integration",
     logo: awsLogo,
   },
   {
     name: "Azure",
     fullName: "Microsoft Azure",
-    level: "Gold Partner",
+    level: "Cloud Migrations and Integration",
     logo: azureLogo,
   },
   {
     name: "GCP",
     fullName: "Google Cloud",
-    level: "Premier Partner",
+    level: "Cloud Migrations and Integration",
     logo: gcpLogo,
   },
   {
     name: "K8s",
     fullName: "Kubernetes",
-    level: "Certified Provider",
+    level: "Cloud Migrations and Integration",
     logo: kubernetesLogo,
   },
   {
@@ -55,7 +55,7 @@ const Certifications = () => {
             Industry-Leading Credentials
           </h2>
           <p className="text-muted-foreground text-lg">
-            Our team holds the highest certifications from major cloud providers and technology platforms.
+            Our team holds several years of experience in cloud migrations and integrations to major cloud providers and technology platforms.
           </p>
         </div>
 
@@ -68,8 +68,8 @@ const Certifications = () => {
             >
               {/* Logo */}
               <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                <img 
-                  src={cert.logo} 
+                <img
+                  src={cert.logo}
                   alt={`${cert.fullName} logo`}
                   className="max-w-full max-h-full object-contain"
                 />
