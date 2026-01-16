@@ -35,8 +35,8 @@ const CTA = () => {
               hello@zer0touch.com
             </a>
             <span className="hidden sm:block">•</span>
-            <a href="tel:+18005551234" className="hover:text-primary transition-colors">
-              +1 (800) 555-1234
+            <a href="tel:+442075505638" className="hover:text-primary transition-colors">
+              +44 20 7550 5638
             </a>
           </div>
         </div>
