@@ -26,7 +26,7 @@ const Support = () => {
       icon: Phone,
       title: "Phone Support",
       description: "Speak directly with a support engineer",
-      action: "+1 (555) 123-4567",
+      action: "+44 20 7550 5638",
       available: true,
     },
     {
