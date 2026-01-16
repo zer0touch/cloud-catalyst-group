@@ -86,7 +86,7 @@ const Capabilities = () => {
         <div className="mt-16 flex flex-wrap justify-center gap-8 text-muted-foreground text-sm">
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 rounded-full bg-primary" />
-            <span>SOC 2 Type II Compliant</span>
+            <span>SOC 2 Type II</span>
           </div>
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 rounded-full bg-primary" />
@@ -94,11 +94,15 @@ const Capabilities = () => {
           </div>
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 rounded-full bg-primary" />
-            <span>HIPAA Compliant</span>
+            <span>HIPAA</span>
           </div>
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 rounded-full bg-primary" />
-            <span>PCI DSS Certified</span>
+            <span>PCI DSS</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="w-2 h-2 rounded-full bg-primary" />
+            <span>SOX 2</span>
           </div>
         </div>
       </div>

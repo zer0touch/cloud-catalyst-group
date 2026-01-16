@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 50" fill="none">
+  <!-- "Zer" text -->
+  <text x="5" y="35" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="700" fill="#1A1A2E">Zer</text>
+  
+  <!-- Circle with "0" -->
+  <circle cx="85" cy="25" r="18" stroke="#00D4FF" stroke-width="3" fill="none"/>
+  <text x="85" y="33" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="700" fill="#00D4FF" text-anchor="middle">0</text>
+  
+  <!-- "touch" text -->
+  <text x="108" y="35" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="700" fill="#1A1A2E">touch</text>
+</svg>
