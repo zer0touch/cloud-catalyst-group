@@ -47,8 +47,10 @@ const Hero = () => {
                 <ArrowRight className="ml-2" size={20} />
               </Link>
             </Button>
-            <Button variant="heroOutline" size="xl">
-              View Case Studies
+            <Button variant="heroOutline" size="xl" asChild>
+              <a href="/videos/Zer0touch_Company_Overview.mp4" target="_blank" rel="noopener noreferrer">
+                Watch Capabilities Deck
+              </a>
             </Button>
           </div>
 
