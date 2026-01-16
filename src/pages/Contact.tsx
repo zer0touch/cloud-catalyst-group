@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -5,9 +6,23 @@ import PageTransition from "@/components/PageTransition";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 
 const Contact = () => {
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(new FormData(form) as any).toString(),
+    })
+      .then(() => setIsSubmitted(true))
+      .catch((error) => console.error("Form submission error:", error));
+  };
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -70,33 +85,56 @@ const Contact = () => {
                 className="bg-card border border-border rounded-2xl p-8"
               >
                 <h2 className="font-display text-2xl font-bold mb-6">Send us a message</h2>
-                <form className="space-y-6">
-                  <div className="grid sm:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-sm font-medium mb-2">First Name</label>
-                      <Input placeholder="John" />
+                {isSubmitted ? (
+                  <div className="text-center py-12">
+                    <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                      <Mail className="w-8 h-8 text-primary" />
+                    </div>
+                    <h3 className="font-display text-2xl font-bold mb-2">Thank you for your enquiry</h3>
+                    <p className="text-muted-foreground">We'll get back to you as soon as possible.</p>
+                  </div>
+                ) : (
+                  <form 
+                    name="contact" 
+                    method="POST" 
+                    data-netlify="true"
+                    netlify-honeypot="bot-field"
+                    onSubmit={handleSubmit}
+                    className="space-y-6"
+                  >
+                    <input type="hidden" name="form-name" value="contact" />
+                    <p className="hidden">
+                      <label>
+                        Don't fill this out if you're human: <input name="bot-field" />
+                      </label>
+                    </p>
+                    <div className="grid sm:grid-cols-2 gap-4">
+                      <div>
+                        <label className="block text-sm font-medium mb-2">First Name</label>
+                        <Input name="firstName" placeholder="John" required />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium mb-2">Last Name</label>
+                        <Input name="lastName" placeholder="Doe" required />
+                      </div>
                     </div>
                     <div>
-                      <label className="block text-sm font-medium mb-2">Last Name</label>
-                      <Input placeholder="Doe" />
+                      <label className="block text-sm font-medium mb-2">Email</label>
+                      <Input name="email" type="email" placeholder="john@company.com" required />
                     </div>
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium mb-2">Email</label>
-                    <Input type="email" placeholder="john@company.com" />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium mb-2">Company</label>
-                    <Input placeholder="Your Company" />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium mb-2">Message</label>
-                    <Textarea placeholder="Tell us about your project..." rows={5} />
-                  </div>
-                  <Button className="w-full" size="lg">
-                    Send Message
-                  </Button>
-                </form>
+                    <div>
+                      <label className="block text-sm font-medium mb-2">Company</label>
+                      <Input name="company" placeholder="Your Company" />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium mb-2">Message</label>
+                      <Textarea name="message" placeholder="Tell us about your project..." rows={5} required />
+                    </div>
+                    <Button type="submit" className="w-full" size="lg">
+                      Send Message
+                    </Button>
+                  </form>
+                )}
               </motion.div>
 
               {/* Contact Info */}
